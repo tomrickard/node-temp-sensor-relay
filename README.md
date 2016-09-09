@@ -2,10 +2,17 @@
 
 Code for relaying data from an Arduino. There are two main scripts, one that assumes custom firmware is present on the Arduino and one that uses Firmata through Johnny-Five.
 
-## Using Custom Firmware: `temp-sensor-fireware.js`
+## Using Custom Firmware: `firmware.js`
 
+```
+node firmware.js
+```
 
-## Using Firmata: `temp-sensor-johnny-five.js`
+## Using Firmata: `firmata.js`
+
+```
+node firmata.js
+```
 
 ## Usage
 
