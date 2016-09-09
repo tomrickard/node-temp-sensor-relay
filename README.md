@@ -1,6 +1,6 @@
 # Temperature Sensor Relay
 
-Scripts designed to relay data from an Arduino. The scripts are designed to run both on a Raspberry Pi and standard x86 architecture. There are two main scripts, one that assumes custom firmware is present on the Arduino and one that uses Firmata through Johnny-Five.
+Code for relaying data from an Arduino. There are two main scripts, one that assumes custom firmware is present on the Arduino and one that uses Firmata through Johnny-Five.
 
 ## Using Custom Firmware: `temp-sensor-fireware.js`
 
@@ -12,7 +12,7 @@ Scripts designed to relay data from an Arduino. The scripts are designed to run 
 If using a fresh installation on Raspberry PI/Ubuntu this helper will install Node correctly: 
 
 ```
-./install-node.sh
+./helpers/install-node.sh
 ```
 
 ```

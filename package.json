@@ -1,0 +1,20 @@
+{
+  "name": "node-temp-sensor-relay",
+  "version": "0.0.0",
+  "description": "Code for relaying data from an Arduino.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/trickard/node-temp-sensor-relay.git"
+  },
+  "author": "Thomas Rickard",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/trickard/node-temp-sensor-relay#readme",
+  "dependencies": {
+    "serialport": "^4.0.1",
+    "socket.io-client": "^1.4.8"
+  }
+}
