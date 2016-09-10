@@ -28,8 +28,8 @@ port.on('data', function (data) {
 	var mysql_datetime = date + ' ' + time;
 
 	// Send data to server
-	socket.emit('data', date + ' ' + data);
- 	console.log('sending ' + date + ' ' + data);
+	socket.emit('data', mysql_datetime + ' ' + data);
+ 	console.log('sending ' + mysql_datetime + ' ' + data);
 });
 
 // open errors will be emitted as an error event
