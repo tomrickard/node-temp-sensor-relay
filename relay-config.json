@@ -1,0 +1,4 @@
+{
+	"serverUrl": "http://thomas-desktop:3000",
+	"arduinoPort": "/dev/ttyACM0"
+}

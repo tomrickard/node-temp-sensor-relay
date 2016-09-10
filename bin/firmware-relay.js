@@ -1,10 +1,11 @@
+var config = require('../config')''
 var SerialPort = require("serialport");
-var socket = require('socket.io-client')('http://localhost:3000');
+var socket = require('socket.io-client')(config.serverUrl);
 
 
 // Connects the Arduino port with following settings
 // Newline parser trigger 'data' event when reaching '\n'
-var port = new SerialPort("/dev/ttyACM0", {
+var port = new SerialPort(config.arduinoPort, {
   baudRate: 9600,
   parser: SerialPort.parsers.readline('\n')
 });
