@@ -15,7 +15,7 @@ port.on('open', function() {
 
 
 socket.on('connect', function (err) {
-	console.log('connected to sever')
+	console.log('connected to server')
 	if(err) {
 		console.log(err)
 	}

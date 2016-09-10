@@ -34,8 +34,6 @@ void loop() {
     inputString = "";
     stringComplete = false;
   }
-//  Serial.println(inputString);
-//  delay(1000);
 }
 
 /*
