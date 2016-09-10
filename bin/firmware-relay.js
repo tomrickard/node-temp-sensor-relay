@@ -1,4 +1,4 @@
-var config = require('../config')''
+var config = require('../relay-config');
 var SerialPort = require("serialport");
 var socket = require('socket.io-client')(config.serverUrl);
 
