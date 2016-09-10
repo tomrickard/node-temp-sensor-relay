@@ -10,15 +10,15 @@ if [ $(uname -m) = "x86_64" ]; then
 fi
 
 if [ $(uname -m) = "i686" ]; then
-   https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-x86.tar.xz
+   wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-x86.tar.xz
 fi
 
 if [ $(uname -m) = "armv6l" ]; then
-   https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
+   wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
 fi
 
 if [ $(uname -m) = "armv7l" ]; then
-   https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
+   wget https://nodejs.org/dist/v4.5.0/node-v4.5.0-linux-armv6l.tar.xz
 fi
 
 
