@@ -1,6 +1,7 @@
 var config = require('../relay-config');
 var SerialPort = require("serialport");
 var socket = require('socket.io-client')(config.serverUrl);
+var fs = require('fs')
 
 
 // Connects the Arduino port with following settings
@@ -15,12 +16,12 @@ port.on('open', function() {
 	// Fires requests ever 2 seconds
 	var interval = setInterval(function () {
 		port.write('temp\n')
-	}, 2000);
+	}, 10000);
 });
 
 
 // Triggered when arduino sends data followed by '\n'
-port.on('data', function (data) {
+port.on('data', function (temp) {
 	// Creates timestamp
 	var d = new Date()
 	var date = [d.getFullYear() , d.getMonth()+1, d.getDate()].join('-');
@@ -28,8 +29,9 @@ port.on('data', function (data) {
 	var mysql_datetime = date + ' ' + time;
 
 	// Send data to server
-	socket.emit('data', mysql_datetime + ' ' + data);
- 	console.log('sending ' + mysql_datetime + ' ' + data);
+	socket.emit('data', {datetime: mysql_datetime, temp: temp});
+ 	console.log('sending ' + mysql_datetime + ' ' + temp);
+
 });
 
 // open errors will be emitted as an error event
