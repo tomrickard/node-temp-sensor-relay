@@ -22,13 +22,10 @@ port.on('open', function() {
 
 // Triggered when arduino sends data followed by '\n'
 port.on('data', function (temp) {
-	// Creates timestamp
-	// var d = new Date()
-	// var date = [d.getFullYear() , d.getMonth()+1, d.getDate()].join('-');
-	// var time = [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
-	// var mysql_datetime = date + ' ' + time;
-	var date = new Date();
-	var mysql_datetime = date.toISOString();
+	
+	// Get datetime for local time in ISO8601
+	var mysql_datetime = new Date(new Date().toLocaleString()).toISOString();
+	
 	// Send data to server
 	socket.emit('temp', {datetime: mysql_datetime, temp: temp});
  	console.log('sending ' + mysql_datetime + ' ' + temp);
