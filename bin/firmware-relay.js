@@ -24,10 +24,13 @@ port.on('open', function() {
 port.on('data', function (temp) {
 	
 	// Get datetime for local time in ISO8601
-	var mysql_datetime = new Date(new Date().toLocaleString()).toISOString();
-	
+	// Data is stored at GMT on server
+	// When conerted back to Date object in browser will be correct.
+	// Always Send ISO8601 to server!
+	var mysql_datetime = new Date().toISOString();
+
 	// Send data to server
-	socket.emit('temp', {datetime: mysql_datetime, temp: temp});
+	socket.emit('temp', {date: mysql_datetime, temperature: temp});
  	console.log('sending ' + mysql_datetime + ' ' + temp);
 
 });
