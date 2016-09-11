@@ -29,7 +29,7 @@ port.on('data', function (temp) {
 	var mysql_datetime = date + ' ' + time;
 
 	// Send data to server
-	socket.emit('data', {datetime: mysql_datetime, temp: temp});
+	socket.emit('temp', {datetime: mysql_datetime, temp: temp});
  	console.log('sending ' + mysql_datetime + ' ' + temp);
 
 });
